@@ -2,3 +2,23 @@
   max-height: 35vh;
   overflow: hidden;
 }
+.flex{
+  display: flex;
+  flex-direction: row;
+  width: 98%;
+  margin: auto;
+  ion-button{
+    flex:1;
+  }
+  ion-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+  }
+}
+.checkbutton{
+  width:98%;
+  margin:auto;
+}
+
