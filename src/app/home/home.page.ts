@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {user} from '../models/model';
+import { CurrencyList } from '../models/Currencylist';
+
 
 @Component({
   selector: 'app-home',
@@ -8,11 +10,12 @@ import {user} from '../models/model';
 })
 export class HomePage {
   user:user;
+  currency:any = CurrencyList;
   constructor(){
 
   }
   init(){
-
+   
   }
   
 }
