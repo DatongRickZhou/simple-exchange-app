@@ -15,11 +15,21 @@
       </ion-button>
   </ion-item>
   <div class="flex">
-      <ion-button >{{Currency1Selected}} currency1<ion-icon slot="end" name="arrow-dropdown"></ion-icon></ion-button>
+    <ion-item>
+      <ion-label>Currency:</ion-label>
+      <ion-select [compareWith]="compareWith">
+        <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
+      </ion-select>
+      </ion-item>
       <ion-label>
           <ion-icon name="code" ></ion-icon>
       </ion-label>
-      <ion-button>{{Currency2Selected}} currency2 <ion-icon slot="end" name="arrow-dropdown"></ion-icon></ion-button>
+      <ion-item>
+        <ion-label>Currency:</ion-label>
+        <ion-select [compareWith]="compareWith">
+          <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
+        </ion-select>
+      </ion-item>
   </div>
   <div class="checkbutton">
       <ion-button expand="block">
