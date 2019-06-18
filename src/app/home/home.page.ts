@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {user,currency} from '../models/model';
 import { CurrencyList } from '../models/Currencylist';
+import {AuthService} from '../auth.service';
+import { HttpClient } from '@angular/common/http';
+
 
 
 
@@ -9,26 +12,28 @@ import { CurrencyList } from '../models/Currencylist';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit{
   user:user;
   currency:any = CurrencyList;
+  currency1:any = null;
+  currency2:any = null;
+  currency1code:string;
+  currency2code:string;
+
   
-  currency1:string;
-  currency2:string;
-  
-  constructor(){
+  constructor(private authService:AuthService,private http:HttpClient){
 
   }
-  init(){
+  ngOnInit(){
    
   }
-  change($event){
-    this.currency1=$event;
-   
-      
-
-    
-    console.log(this.currency1);
+  changecurrency1($event) {
+    this.currency1code=this.currency1;
+  }
+  changecurrency2($event) {
+    this.currency2code=this.currency2;
+  }
+  CheckChangeRate(){
 
   }
 

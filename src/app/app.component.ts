@@ -94,6 +94,7 @@ export class AppComponent {
         this.user=null;
         //update navigation for not authed user
         this.appPages=[
+          
           {
             title: 'Signup',
             url: '/signup',
