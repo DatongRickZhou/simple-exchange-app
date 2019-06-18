@@ -11,29 +11,33 @@
 <br>
 <br>
 <br>
-<form class="signform"> 
+<form id="signup" [formGroup]="signUpForm" (submit)="signUp(signUpForm.value)">
   <ion-list>
     <ion-item>
-      <h1>Sign up to your account</h1>
-      <br>
-      <br>
-      <br>
-    </ion-item>
-    <ion-item >
-      <label>UserName:   </label>
-      <ion-input  placeholder="  Username"></ion-input>
+      <h3>Sign up for an account</h3>
     </ion-item>
     <ion-item>
-      <label>Password:   </label>
-      <ion-input placeholder="  Password"></ion-input>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" placeholder="user@example.com" formControlName="email"></ion-input>
     </ion-item>
     <ion-item>
-      <label>Confirm:   </label>
-      <ion-input placeholder="  Confirm Password"></ion-input>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input type="password" placeholder="minimum 6 characters" formControlName="password"></ion-input>
     </ion-item>
-    <ion-item>
-        <ion-button class="signButton">Submit</ion-button>
+    <ion-item lines="none">
+      <ion-toolbar color="primary" class="sign-up-tb">
+        <ion-buttons>
+          <ion-button [disabled]="!signUpForm.valid" type="submit">
+            Sign up
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-item>
+    <ion-item lines="none">
+      Already have an account?<a routerLink="/signin">Sign in</a> 
+     
     </ion-item>
   </ion-list>
+  
 </form>
 </ion-content>

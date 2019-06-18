@@ -3,7 +3,6 @@ export interface user{
     uid:string;
 }
 export interface currency{
-    ID:any;
-    currencyID:string;
-    currencyName:string;
+    CurrencyCode:string;
+    CurrencyName:string;
 }

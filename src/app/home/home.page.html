@@ -17,18 +17,24 @@
   <div class="flex">
     <ion-item>
       <ion-label>Currency:</ion-label>
-      <ion-select >
-        <ion-select-option *ngFor="let Currency of this.currency; let i = index">{{Currency.CurrencyName}}</ion-select-option>
+      <ion-select [(ngModel)]="currency1"  (ionChange)="change1($event)">
+        <ion-select-option value="Currency1.CurrencyCode" *ngFor="let Currency1 of this.currency; let i = index">{{Currency1.CurrencyName}}</ion-select-option>
       </ion-select>
+      
       </ion-item>
       <ion-label>
           <ion-icon name="code" ></ion-icon>
       </ion-label>
       <ion-item>
         <ion-label>Currency:</ion-label>
-        <ion-select >
-          <ion-select-option *ngFor="let Currency of this.currency; let i = index">{{Currency.CurrencyName}}</ion-select-option>
+        <ion-select  [(ngModel)]="currency2" >
+          <ion-select-option *ngFor="let Currency2 of this.currency; let i = index" >{{Currency2.CurrencyName}}</ion-select-option>
         </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          {{currency1.CurrencyCode}}
+        </ion-label>
       </ion-item>
   </div>
   <div class="checkbutton">

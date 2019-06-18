@@ -5,30 +5,33 @@
 </ion-header>
 
 <ion-content>
-    <form class="signform"> 
-        <ion-list>
-          <ion-item>
-            <h1>Sign up to your account</h1>
-            <br>
-            <br>
-            <br>
-          </ion-item>
-          <ion-item >
-            <label>UserName:   </label>
-            <ion-input  placeholder="  Username"></ion-input>
-          </ion-item>
-          <ion-item>
-            <label>Password:   </label>
-            <ion-input placeholder="  Password"></ion-input>
-          </ion-item>
-          <ion-item>
-            <label>Confirm:   </label>
-            <ion-input placeholder="  Confirm Password"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-button class="signButton">Submit</ion-button>
-          </ion-item>
-        </ion-list>
-      </form>
+  <form id="signin" [formGroup]="signInForm" (submit)="signIn(signInForm.value)">
+    <ion-list>
+      <ion-item>
+        <h3>Sign in for an account</h3>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input type="email" placeholder="" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input type="password" placeholder="" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-toolbar color="primary" class="sign-in-tb">
+          <ion-buttons>
+            <ion-button [disabled]="!signInForm.valid" type="submit">
+              Sign in
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-item>
+      <ion-item lines="none" >
+        Don't have an account? <a routerLink="/signup">Sign up</a>
+      </ion-item>
+    </ion-list>
+    
+  </form>
 
 </ion-content>
