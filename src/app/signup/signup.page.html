@@ -1,16 +1,14 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>signup</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <form id="signup" [formGroup]="signUpForm" (submit)="signUp(signUpForm.value)">
   <ion-list>
     <ion-item>
@@ -35,7 +33,6 @@
     </ion-item>
     <ion-item lines="none">
       Already have an account?<a routerLink="/signin">Sign in</a> 
-     
     </ion-item>
   </ion-list>
   

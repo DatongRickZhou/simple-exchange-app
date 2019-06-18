@@ -7,9 +7,8 @@ import {AngularFireAuth} from '@angular/fire/auth'
 export class AuthService {
 
   constructor( private afAuth:AngularFireAuth ) { }
-  //other methods
   signUp(email:string,password:string){
-  return new Promise// 发送，直到接收到返回值，继续，只返回一次
+  return new Promise
   ((resolve,reject)=>{
     this.afAuth.auth.createUserWithEmailAndPassword(email,password)
     .then((response)=>{
