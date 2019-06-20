@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExchangePage } from './exchange.page';
+import { EmptyPage } from './empty.page';
 
-describe('ExchangePage', () => {
-  let component: ExchangePage;
-  let fixture: ComponentFixture<ExchangePage>;
+describe('EmptyPage', () => {
+  let component: EmptyPage;
+  let fixture: ComponentFixture<EmptyPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExchangePage ],
+      declarations: [ EmptyPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExchangePage);
+    fixture = TestBed.createComponent(EmptyPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -4,5 +4,11 @@ export interface user{
 }
 export interface currency{
     CurrencyCode:string;
-    CurrencyName:string;
+    amount:number;
+}
+export interface SelectedCurrencys{
+    FromCurrencyCode:string;
+    FromCurrencyName:string;
+    ToCurrencyCode:string;
+    ToCurrencyName:string;
 }

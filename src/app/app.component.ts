@@ -66,6 +66,7 @@ export class AppComponent {
     this.afAuth.authState.subscribe((user)=>{
       if(user){
         this.user=user;
+        this.storage.SaveUserInsession(this.user);
         //update navigation for logged in user
         this.appPages=[
           {
@@ -78,11 +79,7 @@ export class AppComponent {
             url:'/userprofile',
             icon: 'exit'
           },
-          {
-            title: 'Exchange',
-            url: '/exchange',
-            icon: 'exchange'
-          },
+          
           {
             title: 'Signout',
             url:'/signout',
