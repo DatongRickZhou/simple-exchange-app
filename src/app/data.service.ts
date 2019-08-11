@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import {AngularFirestore} from '@angular/fire/firestore';
-import {AngularFireAuth} from '@angular/fire/auth';
-import { from, Observable } from 'rxjs';
+import {AngularFirestore} from 'angularfire2/firestore';
+import {AngularFireAuth} from 'angularfire2/auth';
 import { currency } from './models/model';
 
 
@@ -27,9 +26,16 @@ export class DataService {
         this.userProfilePath= "/userProfile/"+this.uid;
       }
     });
+    this.createUserProfile()
   }
   createUserProfile(){
     this.userDoc = this.fireStore.doc<any>(this.userProfilePath);
+      this.userDoc.set({
+        CurrencyCode: 'USD',
+        amount: 0,
+        // Other info you want to add here
+      })
+    
   }
   readacurrency(){
     

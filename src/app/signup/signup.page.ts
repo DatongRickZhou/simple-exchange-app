@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../auth.service';
 import {Validators,FormBuilder,FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
-import {AngularFireDatabase} from '@angular/fire/database'
+
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +11,7 @@ import {AngularFireDatabase} from '@angular/fire/database'
 })
 export class SignupPage implements OnInit {
   signUpForm: FormGroup;
-  constructor(private authService:AuthService,private formBuilder:FormBuilder,private router:Router,private fdb:AngularFireDatabase) { }
+  constructor(private authService:AuthService,private formBuilder:FormBuilder,private router:Router) { }
 
   ngOnInit() {
     this.signUpForm = this.formBuilder.group({

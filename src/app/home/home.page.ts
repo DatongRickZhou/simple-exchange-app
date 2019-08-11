@@ -32,6 +32,7 @@ export class HomePage implements OnInit{
   constructor(private http:HttpClient
     ,private alert:AlertController
     ,private router:Router,
+    private dataservice:DataService
     ){
   }
   ngOnInit(){
